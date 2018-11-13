@@ -21,3 +21,4 @@ build
 *.egg-info/
 dist/
 scalastyle-output.xml
+/data/*.csv
