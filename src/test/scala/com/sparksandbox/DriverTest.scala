@@ -42,10 +42,10 @@ class DriverTest extends SparkTestCase {
 
   test("Get Baskets Per Household") {
     val start = System.currentTimeMillis()
-    val transactions = new TransactionsRDD(sparkContext.textFile("data/transactions.csv", 5))
+    val transactions = new PurchasesRDD(sparkContext.textFile("data/transactions.csv", 5))
     val basketsPerHousehold = transactions.basketsPerHouseHold()
-
     assert(basketsPerHousehold.nonEmpty)
+    println(basketsPerHousehold)
 
     val end = System.currentTimeMillis()
     println("Execution took " + (end - start))
