@@ -2,10 +2,11 @@ package com.sparksandbox
 
 import java.security.MessageDigest
 
-class PurchaseTransaction(_householdKey: String, _basketId: String) extends Serializable {
-  def householdKey = _householdKey
 
-  def basketId = _basketId
+case class PurchaseTransaction(_householdKey: String, _basketId: String) extends Serializable {
+  def householdKey: String = _householdKey
+
+  def basketId: String = _basketId
 
   def fingerprint(): Long = {
     val concatenatedString = StringBuilder.newBuilder.++=(householdKey).++=(basketId).toString()
