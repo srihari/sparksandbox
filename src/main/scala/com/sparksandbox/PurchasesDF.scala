@@ -12,7 +12,7 @@ case class PurchasesDF(purchasesDF: DataFrame, session: SparkSession) {
     } else {
       val householdKey = row.getString(0)
       val basketId = row.getString(1)
-      Some(PurchaseTransaction(householdKey, basketId))
+      Some(PurchaseTransaction(householdKey, basketId, "", "", "", "", "", "", "", "", "", ""))
     }
   })
 
